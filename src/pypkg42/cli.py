@@ -12,6 +12,7 @@ def main() -> int:
     figlet = Figlet(font="slant")
     print(figlet.renderText("pypkg42"))
     print(f"Hello world from pypkg42 {__version__}!")
+    return 0
 
 
 if __name__ == "__main__":
