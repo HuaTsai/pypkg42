@@ -64,19 +64,6 @@ uv add --group <GROUP> <PACKAGE>
 uv tree
 ```
 
-## Build and Publish
-
-```bash
-# Build the project
-uv build
-
-# Publish to TestPyPi
-uv publish --publish-url https://test.pypi.org/legacy/
-
-# Publish to PyPi
-uv publish --publish-url https://upload.pypi.org/legacy/
-```
-
 ## Environment Installation After Cloning the Project
 
 ```bash
@@ -104,6 +91,19 @@ uv sync --all
 ```
 
 ![uv_syncs](docs/uv_syncs.png)
+
+## Build and Publish
+
+```bash
+# Build the project
+uv build
+
+# Publish to TestPyPi
+uv publish --publish-url https://test.pypi.org/legacy/
+
+# Publish to PyPi: default https://upload.pypi.org/legacy/
+uv publish
+```
 
 ## Usage
 
