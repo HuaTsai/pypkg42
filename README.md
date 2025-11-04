@@ -6,16 +6,21 @@ The practices may evolve over time.
 ## Project Structure
 
 ```bash
-pypkg/
+pypkg42/
 ├── src/
 │   └── pypkg42/              # Main package source code
 │       ├── __init__.py       # Package initialization and version info
+│       ├── __main__.py       # Module entry point for python -m pypkg42
+│       ├── cli.py            # Command-line interface with ASCII art banner
+│       ├── py.typed          # PEP 561 marker for type checking support
 │       └── core/             # Core functionality modules
 │           ├── __init__.py   # Core module initialization
 │           └── add.py        # Addition operations (add, add_multiple)
 ├── tests/                    # Test suite
 │   ├── __init__.py           # Test package initialization
 │   └── test_add.py           # Tests for addition functions
+├── docs/                     # Documentation assets
+│   └── uv_syncs.png          # Dependency sync workflow diagram
 ├── pyproject.toml            # Project configuration and dependencies
 ├── uv.lock                   # Locked dependency versions
 ├── .python-version           # Python version specification
