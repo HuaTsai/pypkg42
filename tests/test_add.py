@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from pypkg.core.add import add, add_multiple
+from pypkg42.core.add import add, add_multiple
 
 
 class TestAdd:
