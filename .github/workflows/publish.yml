@@ -1,0 +1,19 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+      - name: Sync
+        run: uv sync
+      - name: Build
+        run: uv build
+      - name: Publish
+        run: uv publish --publish-url https://test.pypi.org/legacy/
