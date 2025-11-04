@@ -46,7 +46,7 @@ cd pypkg42
 uv version 1.0.0
 
 # Bump project version
-uv version bump <PART>  # where <PART> is one of: major, minor, patch
+uv version --bump <PART>  # where <PART> is one of: major, minor, patch
 
 # Add runtime dependencies
 uv add numpy
