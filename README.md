@@ -128,7 +128,7 @@ uv run pytest
 
 Related configurations can be found in `pyproject.toml` under `[tool.pytest.ini_options]`.
 
-### Development Tools
+## Development Tools
 
 ```bash
 # Check code issues
@@ -147,7 +147,7 @@ uv run ruff format --diff src
 uv run ruff format src
 ```
 
-## How to Include This Project in Another Project
+## How to Import this Module in Another Project
 
 Let `uv` manage your dependencies.
 
@@ -158,7 +158,10 @@ Let `uv` manage your dependencies.
 
    ```toml
    [project]
-   dependencies = ["pypkg42"]
+   dependencies = ["pypkg42>=1.0.0"]
+
+   [tool.uv]
+   index-strategy = "unsafe-best-match"
 
    [tool.uv.sources]
    pypkg42 = { index = "test-pypi" }
@@ -168,7 +171,12 @@ Let `uv` manage your dependencies.
    url = "https://test.pypi.org/simple"
    ```
 
-   Then run `uv sync` to install the dependency.
+   Then run `uv sync` to install the dependency.  
+   If the package is on the default PyPI, simply add it as follows:
+
+   ```bash
+   uv add pypkg42
+   ```
 
 2. Locally
 
@@ -184,4 +192,20 @@ Let `uv` manage your dependencies.
 
    [tool.uv.sources]
    pypkg42 = { path = "path/to/pypkg42", editable = true }
+   ```
+
+## How to Install the Application in the System
+
+1. Remotely: without clone and directly from GitHub
+
+   ```bash
+   uv tool install pypkg42 --from git+https://github.com/HuaTsai/pypkg42
+   uv tool uninstall pypkg42
+   ```
+
+2. Locally: with clone the repository
+
+   ```bash
+   uv tool install .
+   uv tool uninstall pypkg42
    ```
