@@ -1,31 +1,34 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "pypkg"
-dynamic = ["version"]
+name = "pypkg42"
+version = "1.0.0"
 description = "A modern Python package sample demonstrating standard practices."
 authors = [{ name = "HuaTsai", email = "huatsai42@gmail.com" }]
-license = { text = "MIT License" }
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["numpy"]
+dependencies = [
+    "art>=6.5",
+    "numpy>=2.2.6",
+    "pyfiglet>=1.0.4",
+]
 
-[project.optional-dependencies]
-dev = ["pytest", "ruff"]
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
 
 [project.urls]
-Repository = "https://github.com/HuaTsai/pypkg.git"
+Repository = "https://github.com/HuaTsai/pypkg42.git"
 
-[tool.setuptools]
-packages = ["pypkg"]
+[project.scripts]
+pypkg42 = "pypkg42.cli:main"
 
-[tool.setuptools.dynamic]
-version = { attr = "pypkg.__version__" }
+[project.optional-dependencies]
+plot = ["matplotlib>=3.10.7"]
+
+[dependency-groups]
+dev = ["pytest>=8.4.2", "ruff>=0.14.3"]
 
 [tool.pytest.ini_options]
-testpaths = ["pypkg/tests"]
 addopts = ["--verbose"]
 
 [tool.ruff]
