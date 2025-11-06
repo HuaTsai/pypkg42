@@ -160,15 +160,13 @@ Let `uv` manage your dependencies.
    [project]
    dependencies = ["pypkg42>=1.0.0"]
 
-   [tool.uv]
-   index-strategy = "unsafe-best-match"
-
    [tool.uv.sources]
    pypkg42 = { index = "test-pypi" }
 
    [[tool.uv.index]]
    name = "test-pypi"
    url = "https://test.pypi.org/simple"
+   explicit = true
    ```
 
    Then run `uv sync` to install the dependency.  
