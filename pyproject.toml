@@ -5,11 +5,8 @@ description = "A modern Python package sample demonstrating standard practices."
 authors = [{ name = "HuaTsai", email = "huatsai42@gmail.com" }]
 license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-    "numpy>=2.2.6",
-    "pyfiglet>=1.0.4",
-]
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.2.6", "pyfiglet>=1.0.4"]
 
 [build-system]
 requires = ["setuptools>=61"]
