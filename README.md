@@ -13,6 +13,9 @@ pypkg42/
 │       ├── __main__.py       # Module entry point for python -m pypkg42
 │       ├── cli.py            # Command-line interface with ASCII art banner
 │       ├── py.typed          # PEP 561 marker for type checking support
+│       ├── config/           # Configuration management
+│       │   ├── __init__.py   # Config module initialization
+│       │   └── config.toml   # Default configuration template
 │       └── core/             # Core functionality modules
 │           ├── __init__.py   # Core module initialization
 │           └── add.py        # Addition operations (add, add_multiple)
