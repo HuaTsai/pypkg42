@@ -17,6 +17,6 @@ jobs:
       - name: Sync
         run: uv sync
       - name: Build
-        run: uv build
+        run: uv build --sdist
       - name: Publish
         run: uv publish --publish-url https://test.pypi.org/legacy/
