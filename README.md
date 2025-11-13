@@ -14,11 +14,7 @@ pypkg42/
 │       ├── cli.py            # Command-line interface with ASCII art banner
 │       ├── py.typed          # PEP 561 marker for type checking support
 │       ├── config/           # Configuration management
-│       │   ├── __init__.py   # Config module initialization
-│       │   └── config.toml   # Default configuration template
 │       └── core/             # Core functionality modules
-│           ├── __init__.py   # Core module initialization
-│           └── add.py        # Addition operations (add, add_multiple)
 ├── tests/                    # Test suite
 │   ├── __init__.py           # Test package initialization
 │   └── test_add.py           # Tests for addition functions
@@ -119,6 +115,12 @@ uv run python -m pypkg42
 
 # Run installed binary (recommended)
 uv run pypkg42
+
+# Python Fibonacci test
+uv run python -c "import pypkg42.core.fib_py as fib_py; print(fib_py.fib(40))"
+
+# C extension Fibonacci test
+uv run python -c "import pypkg42.core.fib_c as fib_c; print(fib_c.fib(40))"
 ```
 
 Providing a binary is recommended, which is defined in `pyproject.toml` under `[project.scripts]`.
