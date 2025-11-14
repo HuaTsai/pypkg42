@@ -1,15 +1,6 @@
 #include <Python.h>
 #include <time.h>
 
-static long fib_recursive(int n) {
-  if (n <= 0) {
-    return 0;
-  } else if (n == 1) {
-    return 1;
-  }
-  return fib_recursive(n - 1) + fib_recursive(n - 2);
-}
-
 static PyObject* fib(PyObject* self, PyObject* args) {
   int n;
 
@@ -17,19 +8,19 @@ static PyObject* fib(PyObject* self, PyObject* args) {
     return NULL;
   }
 
-  if (n < 0) {
-    PyErr_SetString(PyExc_ValueError, "n must be non-negative");
-    return NULL;
+  if (n <= 0) {
+    return PyLong_FromLongLong(0);
+  } else if (n == 1 || n == 2) {
+    return PyLong_FromLongLong(1);
   }
-
-  clock_t start = clock();
-  long result = fib_recursive(n);
-  clock_t end = clock();
-
-  double elapsed_time = (double)(end - start) / CLOCKS_PER_SEC;
-  printf("fib(%d) took %.6f seconds\n", n, elapsed_time);
-
-  return PyLong_FromLong(result);
+  long long a = 1;
+  long long b = 1;
+  for (int i = 2; i < n; i++) {
+    long long temp = b;
+    b += a;
+    a = temp;
+  }
+  return PyLong_FromLongLong(b);
 }
 
 // clang-format off
