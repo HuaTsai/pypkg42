@@ -1,6 +1,6 @@
 [project]
 name = "pypkg42"
-version = "1.4.1"
+version = "1.4.2"
 description = "A modern Python package sample demonstrating standard practices."
 authors = [{ name = "HuaTsai", email = "huatsai42@gmail.com" }]
 license = "MIT"
