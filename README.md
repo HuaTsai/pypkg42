@@ -117,10 +117,10 @@ uv run python -m pypkg42
 uv run pypkg42
 
 # Python Fibonacci test
-uv run python -c "import pypkg42.core.fib_py as fib_py; print(fib_py.fib(40))"
+uv run python -m timeit -s "import pypkg42.core.fib_py as fib_py" "fib_py.fib(20)"
 
 # C extension Fibonacci test
-uv run python -c "import pypkg42.core.fib_c as fib_c; print(fib_c.fib(40))"
+uv run python -m timeit -s "import pypkg42.core.fib_c as fib_c" "fib_c.fib(20)"
 ```
 
 Providing a binary is recommended, which is defined in `pyproject.toml` under `[project.scripts]`.
